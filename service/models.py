@@ -71,13 +71,31 @@ class Product(db.Model):
     ##################################################
     # Table Schema
     ##################################################
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), nullable=False)
-    description = db.Column(db.String(250), nullable=False)
-    price = db.Column(db.Numeric, nullable=False)
-    available = db.Column(db.Boolean(), nullable=False, default=True)
+    id = db.Column(
+        db.Integer,
+        primary_key=True
+    )
+    name = db.Column(
+        db.String(100),
+        nullable=False
+    )
+    description = db.Column(
+        db.String(250),
+        nullable=False
+    )
+    price = db.Column(
+        db.Numeric,
+        nullable=False
+    )
+    available = db.Column(
+        db.Boolean(),
+        nullable=False,
+        default=True
+    )
     category = db.Column(
-        db.Enum(Category), nullable=False, server_default=(Category.UNKNOWN.name)
+        db.Enum(Category),
+        nullable=False,
+        server_default=(Category.UNKNOWN.name)
     )
 
     ##################################################
